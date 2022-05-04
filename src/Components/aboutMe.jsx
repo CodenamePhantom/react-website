@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 
 import { fadeInProperties } from "../helpers/framer-motionProperties.js"
+import { HomeCollapse } from "../pages/Home.js";
 
-export function AboutMe() {
+export function AboutMe() { 
   const [toggle, setToggle] = useState("");
   const [toggleId, setToggleId] = useState(0);
+
+  const { hidden } = useContext(HomeCollapse);
 
   const aboutsAnimation = (prop) =>
     toggle === prop ? "animate-aboutOpen max-h-fit" : "max-h-0";
   const aboutsContainer =
     "overflow-hidden bg-stone-200 rounded xs:px-5";
   const aboutsTitle = `bg-stone-200 text-red-700 font-extrabold cursor-pointer rounded-full pl-2 
-      xs:text-[16px] xs:py-2 xs:w-[90%] xs:m-2 xs:ml-4 md:w-auto md:my-4`;
+      xs:text-[16px] xs:py-2 xs:w-[90%] xs:m-2 xs:mx-auto md:w-auto md:mx-4 md:my-4`;
   const aboutsText = "xs:text-[14px] xs:py-1";
   const aboutsSeparator =
     "bg-stone-500 xs:w-[70%] xs:h-1 xs:mx-auto md:w-[85%]";

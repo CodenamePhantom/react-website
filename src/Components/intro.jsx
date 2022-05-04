@@ -1,9 +1,11 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useContext } from "react";
 
 import { SubTitle } from "./introSubTitle.jsx";
+import { HomeCollapse } from "../pages/Home.js";
 
 export function MainTitle({titleValue, subTitleValue}) {
+  const { hidden } = useContext(HomeCollapse)
+
   // Create the title array for hoverable letters. The underline is used to keep words on
   // the same line, and will be replaced with a blank paragraph for spacing.
   const title = titleValue;

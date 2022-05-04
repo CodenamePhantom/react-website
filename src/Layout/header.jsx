@@ -8,7 +8,7 @@ export function Header() {
   // Navbar styles. mainNavStyle contains the common styles between mobile and desktop,
   // Dropdown contains the mobile menu toggle model.
   // Check tailwind.config.js for details on the animate-open/animate-close classes
-  const mainNavStyle = `z-10 bg-slate-200 xs:shrink-0 xs:w-full xs:absolute xs:top-20 
+  const mainNavStyle = `z-10 bg-stone-50 xs:shrink-0 xs:w-full xs:absolute xs:top-20 
     xs:left-0 xs:overflow-hidden md:ml-auto md:w-auto md:static md:pr-2 md:block md:h-auto`;
   const dropDownOpen = `xs:animate-open ${mainNavStyle}`;
   const dropDownClosed = `xs:animate-close xs:h-0 ${mainNavStyle}`;
@@ -38,7 +38,7 @@ export function Header() {
   // Render the main Header
   return (
     <header
-      className="z-10 bg-slate-200 sticky top-0 h-20 flex flex-row flex-wrap items-center 
+      className="z-10 bg-stone-50 sticky top-0 h-20 flex flex-row flex-wrap items-center 
         xs:justify-between xs:p-4 md:p-0"
     >
       <div className="md:rounded-full">
