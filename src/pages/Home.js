@@ -1,24 +1,28 @@
 import React, { createContext, useState } from "react";
 
 import { Header } from "../Layout/header.jsx";
-import { MainTitle } from "../Components/intro.jsx";
+import MainTitle from "../Components/mainTitleHome.jsx";
 import { AboutMe } from "../Components/aboutMe.jsx";
-import { SkillTree } from "../Components/skillTree.jsx"
+import { SoftSkillChart } from "../Components/softSkillChart.jsx"
+import { DevSkillChart } from "../Components/devSkillChart.jsx"
+import { DesignSkillChart } from "../Components/designSkillChart.jsx";
+import { SkillTreeMaster } from "../Components/skillTreeMaster.js"
 import { Footer } from "../Layout/footer.jsx"
 
 export const HomeCollapse = createContext(null);
 
 export function Home() {
   const [hidden, setHidden] = useState(false);
+  const [chartType, setChartType] = useState("");
 
   return(
-    <HomeCollapse.Provider value={{hidden, setHidden}}>
+    <HomeCollapse.Provider value={{hidden, setHidden, chartType, setChartType}}>
       <Header />
-      <MainTitle 
+      <MainTitle
         titleValue={
           `Welcome to_vitor's web_site!!! the_world_most renowed web_developer!`.toUpperCase()
         } 
-        subTitleValue="Well... at least my mom says so!" 
+        subTitleValue="Well... at least my mom says so!"
       />
       <AboutMe />
       <h2 
@@ -26,7 +30,10 @@ export function Home() {
       >
         Skill Charts
       </h2>
-      <SkillTree />
+      <SoftSkillChart />
+      <DevSkillChart />
+      <DesignSkillChart />
+      <SkillTreeMaster />
       <Footer />
     </HomeCollapse.Provider>
   )

@@ -5,8 +5,8 @@ import gmailIcon from "../Assets/Images/gmail-icon.png";
 
 export function Footer() {
   return (
-    <section className="flex flex-row justify-between bg-stone-50 xs:h-44 md:h-44">
-      <div className="my-auto ml-4">
+    <section className="flex xs:flex-col md:flex-row justify-between bg-stone-50 h-auto py-4">
+      <div className="my-auto ml-4 xs:hidden md:block">
         <h4 className="text-[15px]">Vitor Augusto Ferreira Falchi</h4>
         <p className="text-[13px]">All trademarks apply</p>
       </div>
@@ -14,7 +14,7 @@ export function Footer() {
         <img
           src="https://via.placeholder.com/65"
           alt=""
-          className="max-w-fit mx-auto mb-2"
+            className="max-w-fit mx-auto mb-2 w-[65px] h-[65px]"
         />
         <p className="text-[13px]">
           The greatest developer of <strong>all times</strong>!

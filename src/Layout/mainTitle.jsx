@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-import { SubTitle } from "./introSubTitle.jsx";
-import { HomeCollapse } from "../pages/Home.js";
+import { SubTitle } from "../Components/introSubTitle.jsx";
 
-export function MainTitle({titleValue, subTitleValue}) {
-  const { hidden } = useContext(HomeCollapse)
-
+const MainTitle = ({ titleValue, subTitleValue }) => {
   // Create the title array for hoverable letters. The underline is used to keep words on
   // the same line, and will be replaced with a blank paragraph for spacing.
   const title = titleValue;
@@ -16,7 +14,10 @@ export function MainTitle({titleValue, subTitleValue}) {
   // Create the letter component for each letter and apply the hover effect
   const TitleArr = ({ splitTitle }) =>
     splitTitle.map((word) => (
-      <div className="flex flex-row box-content md:my-auto px-2">
+      <div
+        key={Math.random()}
+        className="flex flex-row box-content md:my-auto px-2"
+      >
         {word.map((letter) =>
           letter !== "_" ? (
             <p
@@ -24,7 +25,7 @@ export function MainTitle({titleValue, subTitleValue}) {
               className="text-4xl text-stone-300 font-extrabold
                     h-fit font-mono transition-all md:text-5xl 
                     hover:scale-110 hover:first-letter:text-amber-600 
-                    hover:mx-1"
+                    hover:mx-1 sca"
             >
               {letter}
             </p>
@@ -39,9 +40,16 @@ export function MainTitle({titleValue, subTitleValue}) {
 
   // Assemble and style the main component
   return (
-    <div className="bg-stone-900 p-5 flex flex-row flex-wrap md:justify-center md:h-auto">
+    <section className="bg-stone-900 p-5 flex flex-row flex-wrap md:justify-center md:h-auto">
       <TitleArr splitTitle={splitTitle} />
       <SubTitle subTitle={subTitleValue} />
-    </div>
+    </section>
   );
-}
+};
+
+MainTitle.propTypes = {
+  titleValue: PropTypes.string,
+  subTitleValue: PropTypes.string,
+};
+
+export default MainTitle;

@@ -14,7 +14,7 @@ export function Header() {
   const dropDownClosed = `xs:animate-close xs:h-0 ${mainNavStyle}`;
 
   // Make the button rotate 180 degrees when clicked
-  const mainButtonStyle = `border-slate-600 xs:border-4 xs:rounded-full md:m-4 
+  const mainButtonStyle = `border-slate-600 w-[40px] h-[40px] xs:border-4 xs:rounded-full md:m-4 
     md:rounded-none md:border-0`;
   const buttonOpen = `transition ease-in-out duration-1000 rotate-180 ${mainButtonStyle}`;
   const buttonClosed = `transition ease-in-out duration-1000 rotate-0 ${mainButtonStyle}`;
@@ -25,6 +25,7 @@ export function Header() {
 
   // Allow the image to toggle the dropdown on screens bellow 767 pixels
   const handleDropDown = (e) => {
+    console.log(dropDown)
     e.preventDefault();
     if (window.innerWidth < 767) {
       if (dropDown === "initial") {
