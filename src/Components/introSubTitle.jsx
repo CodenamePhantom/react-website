@@ -1,17 +1,40 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const SubTitle = (subTitle) => {
+import { motion } from "framer-motion";
+
+const SubTitle = ({ subTitle, animation, duration }) => {
   return (
-    <div className="bg-stone-900 flex flex-row content-center pt-4 w-full mx-auto 
-          overflow-hidden">
-      <p
-        className="text-[15px] text-clip overflow-hidden whitespace-nowrap ml-auto box-content
-          caret-transparent text-red-600 bg-stone-900 font-mono font-bold animate-typping
-          w-auto"
+    <div
+      className="bg-stone-900 flex flex-row content-center pt-4 w-full mx-auto 
+          overflow-hidden"
+    >
+      <motion.p
+        className={`text-[15px] ml-auto overflow-hidden caret-transparent whitespace-nowrap 
+          text-red-600 bg-stone-900 font-mono font-bold ${animation}`}
       >
-      {subTitle.subTitle}
-      </p>
-      <span className="z-0 bg-red-800 mr-auto w-3 h-6 animate-blink"></span>
+        {subTitle}
+      </motion.p>
+      <motion.span
+        className="z-0 bg-red-800 mr-auto w-3 h-6"
+        initial={{ opacity: 1 }}
+        transition={{
+          delay: duration,
+          ease: "linear",
+          repeat: Infinity,
+          duration: 1.3,
+          times: [0, 0.4, 1, 1.3],
+        }}
+        animate={{ opacity: [1, 1, 0, 1] }}
+      ></motion.span>
     </div>
-  )
-}
+  );
+};
+
+SubTitle.propTypes = {
+  subTitle: PropTypes.string,
+  textLength: PropTypes.number,
+  duration: PropTypes.number,
+};
+
+export default SubTitle;

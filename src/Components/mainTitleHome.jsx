@@ -1,10 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import { SubTitle } from "../Components/introSubTitle.jsx";
+import SubTitle from "../Components/introSubTitle.jsx";
 import { HomeCollapse } from "../pages/Home.js";
 
-const MainTitle = ({ titleValue, subTitleValue }) => {
+const MainTitle = ({
+  titleValue,
+  subTitleValue,
+  subTitleAnimation,
+  subTitleDuration,
+}) => {
   const { hidden } = useContext(HomeCollapse);
   const [collapse, setCollapse] = useState("scale-100");
 
@@ -37,7 +42,7 @@ const MainTitle = ({ titleValue, subTitleValue }) => {
               className="text-4xl text-stone-300 font-extrabold
                     h-fit font-mono transition-all md:text-5xl 
                     hover:scale-110 hover:first-letter:text-amber-600 
-                    hover:mx-1 sca"
+                    hover:mx-1"
             >
               {letter}
             </p>
@@ -55,7 +60,11 @@ const MainTitle = ({ titleValue, subTitleValue }) => {
     <div className={`transition-all transform origin-top ${collapse}`}>
       <section className="bg-stone-900 p-5 flex flex-row flex-wrap md:justify-center md:h-auto">
         <TitleArr splitTitle={splitTitle} />
-        <SubTitle subTitle={subTitleValue} />
+        <SubTitle
+          subTitle={subTitleValue}
+          animation={subTitleAnimation}
+          duration={subTitleDuration}
+        />
       </section>
     </div>
   );

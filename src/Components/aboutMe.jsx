@@ -45,7 +45,7 @@ export function AboutMe() {
     if (hidden === true) {
       setCollapse("scale-x-0 max-h-0");
     } else {
-      setCollapse("scale-x-100 xs:max-h-[490px] md:max-h-[300px]");
+      setCollapse("scale-x-100 xs:max-h-[800px] md:max-h-[550px]");
     }
   }, [hidden]);
 

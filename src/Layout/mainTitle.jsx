@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import { SubTitle } from "../Components/introSubTitle.jsx";
+import SubTitle from "../Components/introSubTitle.jsx";
 
-const MainTitle = ({ titleValue, subTitleValue }) => {
+const MainTitle = ({
+  titleValue,
+  subTitleValue,
+  subTitleAnimation,
+  subTitleDuration,
+}) => {
   // Create the title array for hoverable letters. The underline is used to keep words on
   // the same line, and will be replaced with a blank paragraph for spacing.
   const title = titleValue;
@@ -42,7 +47,11 @@ const MainTitle = ({ titleValue, subTitleValue }) => {
   return (
     <section className="bg-stone-900 p-5 flex flex-row flex-wrap md:justify-center md:h-auto">
       <TitleArr splitTitle={splitTitle} />
-      <SubTitle subTitle={subTitleValue} />
+      <SubTitle
+        subTitle={subTitleValue}
+        animation={subTitleAnimation}
+        duration={subTitleDuration}
+      />
     </section>
   );
 };

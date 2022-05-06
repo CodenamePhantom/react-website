@@ -6,16 +6,17 @@ import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
 import { HomeCollapse } from "../pages/Home";
 
 export function SoftSkillChart() {
-  const { chartType, setChartType, hidden, setHidden } = useContext(HomeCollapse);
-  const [hide, setHide] = useState("h-0");
+  const { chartType, setChartType, hidden, setHidden } =
+    useContext(HomeCollapse);
+  const [hide, setHide] = useState("h-0 w-0");
 
   useEffect(() => {
     if (chartType === "soft skills") {
-      setHide("h-[600px]");
+      setHide("h-[600px] w-screen");
     } else {
-      setHide("h-0");
+      setHide("h-0 w-0");
     }
-  }, [hidden]);
+  }, [hidden, chartType]);
 
   return (
     <div
@@ -26,7 +27,7 @@ export function SoftSkillChart() {
         className="mt-4 ml-4 w-7 h-7 text-stone-50 transition-all"
         onClick={() => {
           setHidden((currHidden) => !currHidden);
-          setChartType("")
+          setChartType("");
         }}
       />
     </div>

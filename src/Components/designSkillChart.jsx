@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
@@ -6,16 +6,17 @@ import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
 import { HomeCollapse } from "../pages/Home";
 
 export function DesignSkillChart() {
-  const { chartType, setChartType, hidden, setHidden } = useContext(HomeCollapse);
+  const { chartType, setChartType, hidden, setHidden } =
+    useContext(HomeCollapse);
   const [hide, setHide] = useState("h-0");
 
   useEffect(() => {
     if (chartType === "design skills") {
-      setHide("h-[600px]");
+      setHide("h-[600px] w-screen");
     } else {
       setHide("h-0");
     }
-  }, [hidden]);
+  }, [hidden, chartType]);
 
   return (
     <div
@@ -26,7 +27,7 @@ export function DesignSkillChart() {
         className="mt-4 ml-4 w-7 h-7 text-stone-50 transition-all"
         onClick={() => {
           setHidden((currHidden) => !currHidden);
-          setChartType("")
+          setChartType("");
         }}
       />
     </div>

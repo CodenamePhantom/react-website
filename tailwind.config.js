@@ -20,27 +20,20 @@ module.exports = {
           to: { height: "0" },
         },
 
-        blink: {
-          "0%": { opacity: "0" },
-          "15%": { opacity: "1" },
-          "30%": { opacity: "1" },
-          "100%": { opacity: "0" },
-        },
-
         typping: {
-          "0%": { "max-width": "0" },
-          "5%": { "max-width": "0" },
-          "99%": { "max-width": "288px" },
+          "0%": { "max-width": "0px" },
+          "5%": { "max-width": "0px" },
+          "99%": { "max-width": "500px" },
         },
 
         aboutOpen: {
           from: {
             transform: "scaleY(0)",
-            "transform-origin": "top"
+            "transform-origin": "top",
           },
           to: {
             transform: "scaleY(1)",
-            "transform-origin": "top"
+            "transform-origin": "top",
           },
         },
       },
@@ -49,8 +42,6 @@ module.exports = {
       animation: {
         open: "open 1s normal",
         close: "close 1s normal",
-        blink: "blink 1.3s 4.2s infinite",
-        typping: "typping 4s steps(21, end)",
         aboutOpen: "aboutOpen ease-out 0.2s normal",
       },
     },
