@@ -6,15 +6,18 @@ import { AboutMe } from "../Components/aboutMe.jsx";
 import { SkillTreeMaster } from "../Components/skillTreeMaster.js";
 import { Footer } from "../Layout/footer.jsx";
 
+// Create the home page main context to manage the collapsed state of the components.
 export const HomeCollapse = createContext(null);
 
 export function Home() {
+  // State used to provide the values for the collapse functions. On true, the MainTitle
+  // and the AboutMe components will be collapsed to give space to the skillCharts on
+  // SkillTreeMaster
   const [hidden, setHidden] = useState(false);
-  const [chartType, setChartType] = useState("");
 
   return (
     <HomeCollapse.Provider
-      value={{ hidden, setHidden, chartType, setChartType }}
+      value={{ hidden, setHidden }}
     >
       <Header />
       <MainTitle
@@ -24,7 +27,7 @@ export function Home() {
         subTitleDuration={3.2}
       />
       <AboutMe />
-      <h2 className="bg-slate-900 text-stone-100 text-center font-extrabold py-4">
+      <h2 className="bg-stone-900 text-stone-300 text-center font-extrabold py-4">
         Skill Charts
       </h2>
       <SkillTreeMaster />

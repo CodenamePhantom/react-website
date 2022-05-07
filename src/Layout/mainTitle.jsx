@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import SubTitle from "../Components/introSubTitle.jsx";
@@ -11,8 +11,7 @@ const MainTitle = ({
 }) => {
   // Create the title array for hoverable letters. The underline is used to keep words on
   // the same line, and will be replaced with a blank paragraph for spacing.
-  const title = titleValue;
-  const titleWords = title.split(" ");
+  const titleWords = titleValue.split(" ");
   const splitTitle = titleWords.map((words) => words.split(""));
 
   // Writing animation for the subtitle,
@@ -21,16 +20,16 @@ const MainTitle = ({
     splitTitle.map((word) => (
       <div
         key={Math.random()}
-        className="flex flex-row box-content md:my-auto px-2"
+        className="flex flex-row box-content px-2 md:my-auto"
       >
         {word.map((letter) =>
           letter !== "_" ? (
             <p
               key={Math.random()}
-              className="text-4xl text-stone-300 font-extrabold
-                    h-fit font-mono transition-all md:text-5xl 
-                    hover:scale-110 hover:first-letter:text-amber-600 
-                    hover:mx-1 sca"
+              className="text-stone-300 text-4xl font-extrabold
+                    font-mono h-fit transition-all hover:scale-110 
+                    hover:first-letter:text-amber-600 hover:mx-1 
+                    md:text-5xl"
             >
               {letter}
             </p>
@@ -45,7 +44,7 @@ const MainTitle = ({
 
   // Assemble and style the main component
   return (
-    <section className="bg-stone-900 p-5 flex flex-row flex-wrap md:justify-center md:h-auto">
+    <section className="flex flex-row flex-wrap bg-stone-900 p-5 md:justify-center md:h-auto">
       <TitleArr splitTitle={splitTitle} />
       <SubTitle
         subTitle={subTitleValue}

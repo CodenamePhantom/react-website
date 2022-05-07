@@ -4,19 +4,22 @@ import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
 const SubTitle = ({ subTitle, animation, duration }) => {
+  // Reusable subtitle component. It receives a text, an animation and a typping duration as props
+  // for the assembly. The animation and the text is applied to the P component, the duration is
+  // applied to the span component as a delay property
   return (
     <div
-      className="bg-stone-900 flex flex-row content-center pt-4 w-full mx-auto 
-          overflow-hidden"
+      className="flex flex-row content-center bg-stone-900 overflow-hidden mx-auto w-full
+        pt-4"
     >
-      <motion.p
-        className={`text-[15px] ml-auto overflow-hidden caret-transparent whitespace-nowrap 
-          text-red-600 bg-stone-900 font-mono font-bold ${animation}`}
+      <p
+        className={`bg-stone-900 text-red-600 text-[15px] font-mono font-bold overflow-hidden 
+          caret-transparent whitespace-nowrap ml-auto ${animation}`}
       >
         {subTitle}
-      </motion.p>
+      </p>
       <motion.span
-        className="z-0 bg-red-800 mr-auto w-3 h-6"
+        className="bg-red-800 z-0 mr-auto w-3 h-6"
         initial={{ opacity: 1 }}
         transition={{
           delay: duration,
@@ -31,6 +34,7 @@ const SubTitle = ({ subTitle, animation, duration }) => {
   );
 };
 
+//PropTypes for the component. Used to assure the propValues are always the same type.
 SubTitle.propTypes = {
   subTitle: PropTypes.string,
   textLength: PropTypes.number,
