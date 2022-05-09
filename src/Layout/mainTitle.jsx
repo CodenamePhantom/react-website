@@ -44,7 +44,9 @@ const MainTitle = ({
 
   // Assemble and style the main component
   return (
-    <section className="flex flex-row flex-wrap bg-stone-900 p-5 md:justify-center md:h-auto">
+    <section 
+      className="flex flex-row flex-wrap bg-stone-900 p-5 md:justify-center md:h-auto"
+    >
       <TitleArr splitTitle={splitTitle} />
       <SubTitle
         subTitle={subTitleValue}

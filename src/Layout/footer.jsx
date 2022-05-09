@@ -1,7 +1,8 @@
 import React from "react";
 
-import linkedinIcon from "../Assets/Images/linkedin-icon.png";
-import gmailIcon from "../Assets/Images/gmail-icon.png";
+import linkedinIcon from "../Assets/Images/linkedin-icon.webp";
+import gmailIcon from "../Assets/Images/gmail-icon.webp";
+import mainIcon from "../Assets/Images/main-logo-65.webp"
 
 export function Footer() {
   return (
@@ -12,7 +13,7 @@ export function Footer() {
       </div>
       <div className="flex flex-col justify-center text-center mr-4">
         <img
-          src="https://via.placeholder.com/65"
+          src={mainIcon}
           alt=""
             className="mx-auto mb-2 w-[65px] max-w-fit h-[65px]"
         />
@@ -33,8 +34,8 @@ export function Footer() {
               className="mr-2 w-8 h-8"
             />
           </a>
-          <a href="/" className="mr-auto">
-            <img src={gmailIcon} alt="Gmail Logo" className="ml-2 w-10 h-8" />
+            <a href="/" className="mr-auto my-auto">
+            <img src={gmailIcon} alt="Gmail Logo" className="ml-2 w-10 h-7" />
           </a>
         </div>
       </div>

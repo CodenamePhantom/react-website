@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import { Header } from "../Layout/header.jsx";
 import MainTitle from "../Layout/mainTitle.jsx";

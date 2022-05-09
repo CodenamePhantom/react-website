@@ -10,5 +10,16 @@ export const fadeInProperties = [
   {
     "ease": "easeOut",
     "duration": 0.6,
+  },
+  {
+    "ease": "easeOut",
+    "duration": 0.6,
+    "delay": 0.7
+  },
+  {
+    "ease": "easeOut",
+    "duration": 0.6,
+    "delay": 1.3
   }
 ]
+
