@@ -10,8 +10,7 @@ export const Works = () => {
       <MainTitle
         titleValue={`Khajiit has wares...`.toUpperCase()}
         subTitleValue={`If you have coin...`}
-        subTitleAnimation="animate-[typping_6.2s_steps(32,end)]"
-        subTitleDuration={2}
+        subTitleDuration={3}
       />
     </>
   );

@@ -61,8 +61,7 @@ export function Home() {
             <MainTitle
               titleValue={`Welcome to_vitor's web_site!!! the_world_most renowed web_developer!`.toUpperCase()}
               subTitleValue="Well... at least my mom says so!"
-              subTitleAnimation={"animate-[typping_5.2s_steps(32,end)]"}
-              subTitleDuration={3.2}
+              subTitleDuration={4.8}
             />
             <AboutMe />
           </motion.div>

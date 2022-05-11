@@ -6,9 +6,11 @@ import SubTitle from "../Components/introSubTitle.jsx";
 const MainTitle = ({
   titleValue,
   subTitleValue,
-  subTitleAnimation,
   subTitleDuration,
 }) => {
+  // SubTitle length calculation for the subTitle styled component
+  const subTitleLength = subTitleValue.length
+
   // Create the title array for hoverable letters. The underline is used to keep words on
   // the same line, and will be replaced with a blank paragraph for spacing.
   const titleWords = titleValue.split(" ");
@@ -50,7 +52,7 @@ const MainTitle = ({
       <TitleArr splitTitle={splitTitle} />
       <SubTitle
         subTitle={subTitleValue}
-        animation={subTitleAnimation}
+        subTitleLength={subTitleLength}
         duration={subTitleDuration}
       />
     </section>

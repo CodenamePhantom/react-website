@@ -3,7 +3,35 @@ import PropTypes from "prop-types";
 
 import { motion } from "framer-motion";
 
-const SubTitle = ({ subTitle, animation, duration }) => {
+import styled, { keyframes } from "styled-components";
+
+// Styled component dynamic Typping animation.
+const typeWriter = (length) => keyframes`
+  0% { 
+    width: 0ch;
+  }
+  100% { 
+    width: ${length}ch;
+  }
+  
+`
+
+// SubTitle styling.
+const Text = styled.p`
+  background: rgb(28, 25, 23);
+  font-size: 15px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-weight: bold;
+  color: rgb(220, 38, 38);
+  overflow: hidden;
+  caret-color: transparent;
+  white-space: nowrap;
+  margin-left: auto;
+  animation: ${props => typeWriter(props.length)} ${props => props.duration}s steps(${props => props.length}, end);
+`;
+
+const SubTitle = ({ subTitle, subTitleLength, duration }) => {
   // Reusable subtitle component. It receives a text, an animation and a typping duration as props
   // for the assembly. The animation and the text is applied to the P component, the duration is
   // applied to the span component as a delay property
@@ -12,12 +40,7 @@ const SubTitle = ({ subTitle, animation, duration }) => {
       className="flex flex-row content-center bg-stone-900 overflow-hidden mx-auto w-full
         pt-4"
     >
-      <p
-        className={`bg-stone-900 text-red-600 text-[15px] font-mono font-bold overflow-hidden 
-          caret-transparent whitespace-nowrap ml-auto ${animation}`}
-      >
-        {subTitle}
-      </p>
+      <Text length={subTitleLength} duration={duration}>{subTitle}</Text>
       <motion.span
         className="bg-red-800 z-0 mr-auto w-3 h-6"
         initial={{ opacity: 1 }}
@@ -37,7 +60,7 @@ const SubTitle = ({ subTitle, animation, duration }) => {
 //PropTypes for the component. Used to assure the propValues are always the same type.
 SubTitle.propTypes = {
   subTitle: PropTypes.string,
-  textLength: PropTypes.number,
+  subTitleLength: PropTypes.number,
   duration: PropTypes.number,
 };
 

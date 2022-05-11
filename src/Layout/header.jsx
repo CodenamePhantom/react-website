@@ -74,9 +74,11 @@ export function Header() {
             <a href="/">Home</a>
           </li>
           <li className={listStyle}>
-            <a href="/works">Works</a>
+            <a href="/Works">Works</a>
           </li>
-          <li className={listStyle}>Contact</li>
+          <li className={listStyle}>
+            <a href="/Contact">Contact</a>
+          </li>
         </ul>
       </nav>
     </header>

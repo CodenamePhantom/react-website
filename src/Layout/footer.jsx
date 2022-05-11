@@ -6,7 +6,7 @@ import mainIcon from "../Assets/Images/main-logo-65.webp"
 
 export function Footer() {
   return (
-    <section className="flex justify-between bg-stone-50 h-auto py-4 xs:flex-col md:flex-row">
+    <section className="flex justify-between bg-stone-50 h-auto py-4 z-10 xs:flex-col md:flex-row">
       <div className="my-auto ml-4 xs:hidden md:block">
         <h4 className="text-[15px]">Vitor Augusto Ferreira Falchi</h4>
         <p className="text-[13px]">All trademarks apply</p>
